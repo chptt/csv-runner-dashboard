@@ -5,7 +5,7 @@ This project implements the **CSV Runner Dashboard** challenge as part of an
 internship selection process.
 
 Users can upload a CSV file containing running data (`date`, `person`, `miles`),
-which is validated and visualized through summary metrics and interactive charts.
+which is validated and visualized using summary metrics and interactive charts.
 
 ---
 
@@ -84,19 +84,6 @@ High-contrast typography using Tailwind CSS
 
 Responsive layout across screen sizes
 
-yaml
-Copy code
-
----
-
-Create:
-
-.env.example
-
-bash
-Copy code
-
-Content (can be empty or comment):
-
-```env
-# No environment variables required
+Notes
+Development-only warnings related to Content Security Policy (CSP) may appear due
+to Next.js tooling and do not affect production builds.
