@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CSV Runner Dashboard
 
-## Getting Started
+## Project Overview
+This project implements the **CSV Runner Dashboard** challenge as part of an
+internship selection process.
 
-First, run the development server:
+Users can upload a CSV file containing running data (`date`, `person`, `miles`),
+which is validated and visualized through summary metrics and interactive charts.
+
+---
+
+## Assumptions
+- CSV headers must be exactly: `date`, `person`, `miles`
+- Miles must be positive numeric values
+- Dates are treated as strings for visualization
+- Data is processed entirely client-side
+- Duplicate rows are allowed
+
+---
+
+## Prerequisites
+- Node.js >= 18
+- npm
+
+---
+
+## Setup
 
 ```bash
+npm install
+cp .env.example .env
+No environment variables are required for this project.
+
+Run & Verify
+bash
+Copy code
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open: http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Verification Steps
+Upload public/sample.csv
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Verify overall metrics (average, min, max)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Verify per-person metrics update correctly
 
-## Learn More
+Use the person selector to filter views
 
-To learn more about Next.js, take a look at the following resources:
+Upload an invalid CSV (missing column or negative miles) and confirm error handling
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Features
+CSV upload with header and data validation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+CSV preview table for uploaded data
 
-## Deploy on Vercel
+Overall and per-person metrics (average, min, max)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Interactive charts using Recharts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Clear error handling for invalid CSV inputs
+
+Limitations
+No data persistence
+
+Large CSV files are not optimized
+
+Date values are not normalized or sorted
+
+Architecture Notes
+Parsing, validation, and metrics logic are separated into utility modules
+
+Reusable UI components built using shadcn/ui
+
+State is managed at the page level using React hooks
+
+Charts and preview components are isolated for clarity and reuse
+
+Accessibility & UI
+Semantic HTML and labeled inputs
+
+Keyboard-accessible components
+
+High-contrast typography using Tailwind CSS
+
+Responsive layout across screen sizes
+
+yaml
+Copy code
+
+---
+
+Create:
+
+.env.example
+
+bash
+Copy code
+
+Content (can be empty or comment):
+
+```env
+# No environment variables required
