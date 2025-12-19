@@ -30,8 +30,8 @@ which is validated and visualized using summary metrics and interactive charts.
 npm install
 No environment variables are required for this project.
 
-Run & Verify
-bash
+## Run & Verify
+```bash
 npm run dev
 Open: http://localhost:3000
 Upload public/sample.csv
@@ -44,8 +44,9 @@ Use the person selector to filter views
 
 Upload an invalid CSV (missing column or negative miles) and confirm error handling
 
-Features
+
 ## Features
+```bash
 CSV upload with header and data validation
 CSV preview table for uploaded data
 
@@ -56,6 +57,7 @@ Interactive charts using Recharts
 Clear error handling for invalid CSV inputs
 
 ## Limitations
+```bash
 No data persistence
 
 Large CSV files are not optimized
@@ -63,6 +65,7 @@ Large CSV files are not optimized
 Date values are not normalized or sorted
 
 ## Architecture Notes
+```bash
 Parsing, validation, and metrics logic are separated into utility modules
 
 Reusable UI components built using shadcn/ui
@@ -72,6 +75,7 @@ State is managed at the page level using React hooks
 Charts and preview components are isolated for clarity and reuse
 
 ## Accessibility & UI
+```bash
 Semantic HTML and labeled inputs
 
 Keyboard-accessible components
@@ -81,5 +85,6 @@ High-contrast typography using Tailwind CSS
 Responsive layout across screen sizes
 
 ## Notes
+```bash
 Development-only warnings related to Content Security Policy (CSP) may appear due
 to Next.js tooling and do not affect production builds.
