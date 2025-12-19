@@ -28,20 +28,16 @@ which is validated and visualized using summary metrics and interactive charts.
 
 ```bash
 npm install
-cp .env.example .env
 No environment variables are required for this project.
 
 Run & Verify
 bash
-Copy code
 npm run dev
 Open: http://localhost:3000
-
-Verification Steps
 Upload public/sample.csv
 
 Verify overall metrics (average, min, max)
-
+In the dashboard UI, click the "Upload CSV" button and select the sample file located at `public/sample.csv` to upload.
 Verify per-person metrics update correctly
 
 Use the person selector to filter views
@@ -49,8 +45,8 @@ Use the person selector to filter views
 Upload an invalid CSV (missing column or negative miles) and confirm error handling
 
 Features
+## Features
 CSV upload with header and data validation
-
 CSV preview table for uploaded data
 
 Overall and per-person metrics (average, min, max)
@@ -59,14 +55,14 @@ Interactive charts using Recharts
 
 Clear error handling for invalid CSV inputs
 
-Limitations
+## Limitations
 No data persistence
 
 Large CSV files are not optimized
 
 Date values are not normalized or sorted
 
-Architecture Notes
+## Architecture Notes
 Parsing, validation, and metrics logic are separated into utility modules
 
 Reusable UI components built using shadcn/ui
@@ -75,7 +71,7 @@ State is managed at the page level using React hooks
 
 Charts and preview components are isolated for clarity and reuse
 
-Accessibility & UI
+## Accessibility & UI
 Semantic HTML and labeled inputs
 
 Keyboard-accessible components
@@ -84,6 +80,6 @@ High-contrast typography using Tailwind CSS
 
 Responsive layout across screen sizes
 
-Notes
+## Notes
 Development-only warnings related to Content Security Policy (CSP) may appear due
 to Next.js tooling and do not affect production builds.
