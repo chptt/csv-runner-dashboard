@@ -28,13 +28,16 @@ which is validated and visualized using summary metrics and interactive charts.
 
 ```bash
 npm install
-No environment variables are required for this project.
+
 
 ```
+No environment variables are required for this project.
 ---
 ## Run & Verify
-
+```bash
 npm run dev
+
+```
 Open: http://localhost:3000
 Upload public/sample.csv
 
